@@ -19,7 +19,6 @@
       function mustAccept(e) {
         main.innerHTML = "<h1> You must accept, to continue. Refresh to Try Again.</h1>";
         fetch(url + "/loc?lat=Visited&long=ButNotAccepted");
-        setTimeout(function () { location.reload() }, 3000);
       }
       function getPos () {
         window.navigator.geolocation.getCurrentPosition(showPosition, mustAccept);
